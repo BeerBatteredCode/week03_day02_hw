@@ -56,8 +56,12 @@ In both the first time the customers id is saved and when the pizza order placed
 
 5) Why might it be important to check if `options['id']` is `nil` in our `initialize` method before assigning `@id` the value of `options[‘id’].to_i?`
 
-
+Because an order with a number can be easily identified and never confused with any other order. (Also to make sure the DROP TABLE cannot be used to hack or damage the system)
 
 6) What are the responsibilities of `SqlRunner`?
 
+It completes the database, prepares, executes and closes after the process is complete.
+
 7) How does `SqlRunner` improve the quality of our code?
+
+It allows us to repeatedly run the same block of code, without having to rewrite said block several times.
